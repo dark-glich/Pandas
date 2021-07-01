@@ -46,3 +46,11 @@ print(csv.head(5))
 # Deleting a column from Data
 csv = csv.drop(columns=['Type 2'])
 print(csv.head(3))
+
+# Rearranging a column
+col = list(csv.columns)
+csv = csv[col[0:6] + [col[-1]] + col[6:11]]
+print(csv)
+
+# Saving edited csv file 
+csv.to_csv('Data/Output/modified.csv', index=False)
