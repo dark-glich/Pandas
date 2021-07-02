@@ -65,3 +65,17 @@ print(filtered_data)
 # Reseting Index 
 filtered_data.reset_index(drop=True, inplace=True)
 print(filtered_data)
+
+# Regex Filtering
+d = csv.loc[csv['Name'].str.contains('Mega')] 
+print(d) # gives all the values containing 'mega' in its name
+
+d = csv.loc[~csv['Name'].str.contains('Mega')] 
+print(d) # gives all the values not containing 'mega' in its name
+
+# Conditional Changes
+csv.loc[csv['Type 1'] == 'Fire', 'Type 1'] = 'Flamer'
+print(csv) # Changes fire type to flamer
+
+csv.loc[csv['Total'] > 500, ['Generation', 'Legendary']] = [1, True]
+print(csv) # Changes Generation, Legendary if total is greater than 500
