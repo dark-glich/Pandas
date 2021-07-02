@@ -79,3 +79,14 @@ print(csv) # Changes fire type to flamer
 
 csv.loc[csv['Total'] > 500, ['Generation', 'Legendary']] = [1, True]
 print(csv) # Changes Generation, Legendary if total is greater than 500
+
+# Statistics
+csv = pd.read_csv('Data/Output/modified.csv')
+# Mean 
+print(csv.groupby('Type 1').mean())
+# Sum 
+print(csv.groupby('Type 1').sum())
+# Count
+print(csv.groupby('Type 1').count())
+# Median
+print(csv.groupby('Type 1').median())
