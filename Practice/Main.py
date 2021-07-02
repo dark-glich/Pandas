@@ -54,3 +54,14 @@ print(csv)
 
 # Saving edited csv file 
 csv.to_csv('Data/Output/modified.csv', index=False)
+
+# filtering Data 
+fitered_data = csv.loc[(csv['Type 1'] == 'Grass') & (csv['HP'] > 100)] # & - stands for 'and'
+print(fitered_data)
+
+filtered_data = csv.loc[(csv['Speed'] == 80) | (csv['HP'] < 50)] # | - stands for 'or'
+print(filtered_data)
+
+# Reseting Index 
+filtered_data.reset_index(drop=True, inplace=True)
+print(filtered_data)
