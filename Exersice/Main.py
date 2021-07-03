@@ -1,7 +1,6 @@
 import pandas as pd 
 import os
 
-
 # Merging 12 months sales data into single csv file
 files = [file for file in os.listdir('Exersice/Data/Input')]
 data = pd.DataFrame()
