@@ -27,3 +27,7 @@ data['Total'] = data['Price Each'] * data['Quantity Ordered']
 
 # Which month has best sales
 print(data.groupby('Month').sum())
+
+# Creating a City column
+data['City'] = data['Purchase Address'].apply(lambda x: x.split(',')[1]+ ' ,' + x.split(',')[2])
+print(data['City'])
